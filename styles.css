@@ -71,7 +71,7 @@ body {
 .profile-card {
     background: white;
     border-radius: 16px;
-    padding: 40px;
+    padding: 0;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     animation: slideUp 0.5s ease;
     overflow: hidden;
@@ -92,8 +92,61 @@ body {
     }
 }
 
+/* Profile Header Bar - Badge Style */
+.profile-header-bar {
+    background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.header-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-stat:first-child {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+    color: white;
+}
+
+.header-stat:last-child {
+    background: linear-gradient(135deg, #1627e3 0%, #0d1aa8 100%);
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.85em;
+    opacity: 0.9;
+}
+
+.stat-value {
+    font-weight: bold;
+    font-size: 1.15em;
+}
+
+.stat-icon {
+    font-size: 1.3em;
+}
+
 .profile-content {
-    padding: 0;
+    padding: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -161,6 +214,7 @@ body {
     background: #f0f0f0;
     overflow: hidden;
     flex-shrink: 0;
+    border: 3px solid #667eea;
 }
 
 .user-avatar img {
@@ -306,7 +360,15 @@ body {
     .profile-content {
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 0;
+        padding: 30px;
+    }
+
+    .profile-header-bar {
+        justify-content: center;
+    }
+
+    .header-stats {
+        justify-content: center;
     }
 }
 
@@ -325,11 +387,25 @@ body {
     }
 
     .profile-card {
-        padding: 20px;
+        padding: 0;
     }
 
     .profile-content {
-        padding: 0;
+        padding: 20px;
+    }
+
+    .profile-header-bar {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .header-stats {
+        gap: 15px;
+    }
+
+    .header-stat {
+        padding: 10px 15px;
+        font-size: 0.9em;
     }
 
     .chart-container {
