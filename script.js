@@ -61,6 +61,22 @@ function displayProfile(user) {
     const joinDate = getJoinDate(user.registrationTimeSeconds);
     
     const html = `
+        <div class="profile-header-bar">
+            <div class="header-stats">
+                <div class="header-stat">
+                    <span class="stat-label">Profile views</span>
+                    <span class="stat-value">${(user.rating || 0).toLocaleString()}</span>
+                </div>
+                <div class="header-stat">
+                    <span class="stat-icon">🏆</span>
+                    <div class="stat-text">
+                        <span class="stat-label">Codeforces</span>
+                        <span class="stat-value">${user.friendOfCount || 0}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="profile-content">
             <div class="chart-section">
                 <div class="chart-container">
@@ -230,13 +246,11 @@ function showLoading(show) {
     }
 }
 
-// Load a profile on page load if username is in URL
+// Load EK_Roy's profile on page load
 window.addEventListener('load', () => {
     const params = new URLSearchParams(window.location.search);
-    const username = params.get('user');
+    const username = params.get('user') || 'EK_Roy';
     
-    if (username) {
-        elements.usernameInput.value = username;
-        searchProfile();
-    }
+    elements.usernameInput.value = username;
+    searchProfile();
 });
